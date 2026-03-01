@@ -1,19 +1,27 @@
-import openai
+import random
 
-openai.api_key = "YOUR_OPENAI_API_KEY"
+topics = open("keywords.txt").read().splitlines()
+products = open("affiliate_products.txt").read().splitlines()
 
-topic = "Workplace Safety Tips"
+topic = random.choice(topics)
+product = random.choice(products)
 
-response = openai.ChatCompletion.create(
-model="gpt-4o-mini",
-messages=[
-{"role": "user", "content": f"Write a blog article about {topic} with SEO headings."}
-]
-)
+name,link = product.split("|")
 
-article = response.choices[0].message.content
+article = f"""
+TITLE: {topic}
+
+INTRODUCTION
+Warehouse safety and material control are critical for efficient operations.
+
+RECOMMENDED PRODUCT
+{name}
+
+Buy here:
+{link}
+
+CONCLUSION
+Proper safety procedures reduce accidents and improve productivity.
+"""
 
 print(article)
-
-with open("article.txt", "w") as f:
-    f.write(article)
