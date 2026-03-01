@@ -2,50 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AI Marketing Content Factory</title>
+    <title>AI Marketing Dashboard</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #f4f4f9; padding: 20px; }
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f9; }
         h1 { color: #333; }
         button { padding: 10px 20px; margin: 10px; font-size: 16px; cursor: pointer; }
         .section { margin-bottom: 20px; }
     </style>
 </head>
 <body>
-    <h1>AI Marketing Content Factory Dashboard</h1>
+    <h1>AI Marketing Automation Dashboard</h1>
 
     <div class="section">
         <h2>Blog</h2>
-        <button onclick="runBlog()">Generate & Publish Blog</button>
+        <button onclick="alert('This will trigger Blog Generation')">Generate & Publish Blog</button>
     </div>
 
     <div class="section">
         <h2>LinkedIn</h2>
-        <button onclick="runLinkedIn()">Generate LinkedIn Post</button>
+        <button onclick="alert('This will trigger LinkedIn Post Generation')">Generate LinkedIn Post</button>
     </div>
 
     <div class="section">
         <h2>YouTube</h2>
-        <button onclick="runYouTube()">Generate YouTube Description</button>
+        <button onclick="alert('This will trigger YouTube Description')">Generate YouTube Description</button>
     </div>
 
     <div class="section">
         <h2>Amazon Affiliate</h2>
-        <button onclick="runAffiliate()">Add Affiliate Links</button>
+        <button onclick="alert('This will add Amazon Affiliate Links')">Add Affiliate Links</button>
     </div>
-
-    <script>
-        function runBlog() {
-            alert("This will trigger GitHub Action: Generate & Publish Blog");
-        }
-        function runLinkedIn() {
-            alert("This will trigger GitHub Action: Generate LinkedIn Post");
-        }
-        function runYouTube() {
-            alert("This will trigger GitHub Action: Generate YouTube Description");
-        }
-        function runAffiliate() {
-            alert("This will trigger GitHub Action: Add Amazon Affiliate Links");
-        }
-    </script>
 </body>
 </html>
