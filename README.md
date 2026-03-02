@@ -54,7 +54,7 @@ The project includes a web dashboard for controlling automation.
 
 Example:
 
-https://YOURUSERNAME.github.io/ai-marketing-agent/dashboard/
+https://basha1968.github.io/ai-marketing-agent/
 
 ## 🛠 Requirements
 
