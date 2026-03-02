@@ -1,42 +1,19 @@
 import os
-import random
 
-# Get repo directory
-base_dir = os.path.dirname(os.path.abspath(__file__))
+products = []
 
-# Load affiliate products
-products_file = os.path.join(base_dir, "affiliate_products.txt")
+with open("affiliate_products.txt") as f:
+    products = f.readlines()
 
-with open(products_file, "r") as f:
-    products = f.read().splitlines()
+content = "AI Generated Marketing Article\n\n"
 
-# Example topics (or load from keywords.txt)
-topics = [
-    "Warehouse Safety Best Practices",
-    "How to Reduce Warehouse Accidents",
-    "Essential PPE for Warehouse Workers",
-    "Forklift Safety Tips for Beginners"
-]
+for product in products:
+    name, link = product.strip().split("|")
+    content += f"Check out {name}: {link}\n"
 
-topic = random.choice(topics)
-product = random.choice(products)
+os.makedirs("output", exist_ok=True)
 
-name, link = product.split("|")
+with open("output/blog_post.txt", "w") as f:
+    f.write(content)
 
-article = f"""
-TITLE: {topic}
-
-INTRODUCTION
-Warehouse safety and material control are critical for efficient operations.
-
-RECOMMENDED PRODUCT
-{name}
-
-Buy here:
-{link}
-
-CONCLUSION
-Proper safety procedures reduce accidents and improve productivity.
-"""
-
-print(article)
+print("Content generated successfully")
