@@ -1,8 +1,9 @@
-import random
+import os
 
-topics = open("keywords.txt").read().splitlines()
-products = open("affiliate_products.txt").read().splitlines()
+base_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(base_dir, "affiliate_products.txt")
 
+products = open(file_path).read().splitlines()
 topic = random.choice(topics)
 product = random.choice(products)
 
