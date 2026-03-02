@@ -1,5 +1,5 @@
-Wireless Earbuds
-Smart Watch
-Laptop Stand
-USB-C Hub
-Mechanical Keyboard
+Wireless Earbuds|https://amzn.to/example1
+Smart Watch|https://amzn.to/example2
+Laptop Stand|https://amzn.to/example3
+USB-C Hub|https://amzn.to/example4
+Mechanical Keyboard|https://amzn.to/example5
