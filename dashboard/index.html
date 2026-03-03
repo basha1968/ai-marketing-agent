@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>AI Marketing Dashboard</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f9; }
-        h1 { color: #333; }
-        button { padding: 10px 20px; margin: 10px; font-size: 16px; cursor: pointer; }
-        .section { margin-bottom: 20px; }
-    </style>
+<meta charset="UTF-8">
+<title>AI Marketing Dashboard</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>AI Marketing Automation Dashboard</h1>
+<h1>AI Marketing Dashboard</h1>
 
-    <div class="section">
-        <h2>Blog</h2>
-        <button onclick="alert('This will trigger Blog Generation')">Generate & Publish Blog</button>
-    </div>
+<div class="section">
+  <h2>Generate Blog Post</h2>
+  <button onclick="runContentGenerator()">Generate</button>
+  <pre id="contentOutput"></pre>
+</div>
 
-    <div class="section">
-        <h2>LinkedIn</h2>
-        <button onclick="alert('This will trigger LinkedIn Post Generation')">Generate LinkedIn Post</button>
-    </div>
+<div class="section">
+  <h2>Run Social Media Scripts</h2>
+  <button onclick="runSocialMedia()">Run</button>
+  <pre id="socialOutput"></pre>
+</div>
 
-    <div class="section">
-        <h2>YouTube</h2>
-        <button onclick="alert('This will trigger YouTube Description')">Generate YouTube Description</button>
-    </div>
-
-    <div class="section">
-        <h2>Amazon Affiliate</h2>
-        <button onclick="alert('This will add Amazon Affiliate Links')">Add Affiliate Links</button>
-    </div>
+<script src="script.js"></script>
 </body>
 </html>
+
+body { font-family: Arial; padding: 20px; background: #f4f4f9; }
+h1 { color: #333; }
+.section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 10px; background: #fff; }
+button { padding: 10px 20px; margin-top: 10px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
+pre { background: #f0f0f0; padding: 10px; border-radius: 5px; max-height: 300px; overflow-y: auto; }
+
+function runContentGenerator() {
+    document.getElementById('contentOutput').textContent = 'This will generate blog post (backend not connected yet).';
+}
+
+function runSocialMedia() {
+    document.getElementById('socialOutput').textContent = 'This will run social media scripts (backend not connected yet).';
+}
