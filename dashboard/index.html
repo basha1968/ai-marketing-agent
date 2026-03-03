@@ -27,14 +27,27 @@
 </div>
 
 <script>
+const BACKEND_URL = 'https://your-backend-url.onrender.com'; // Replace with your Render backend URL
+
 function runContentGenerator() {
-    document.getElementById('contentOutput').textContent = 'This will generate blog post (backend not connected yet).';
+    const output = document.getElementById('contentOutput');
+    output.textContent = 'Generating blog post...';
+    
+    fetch(`${BACKEND_URL}/run-content-generator`)
+        .then(res => res.text())
+        .then(data => output.textContent = data)
+        .catch(err => output.textContent = 'Error: ' + err);
 }
 
 function runSocialMedia() {
-    document.getElementById('socialOutput').textContent = 'This will run social media scripts (backend not connected yet).';
+    const output = document.getElementById('socialOutput');
+    output.textContent = 'Running social media scripts...';
+    
+    fetch(`${BACKEND_URL}/run-social-media`)
+        .then(res => res.text())
+        .then(data => output.textContent = data)
+        .catch(err => output.textContent = 'Error: ' + err);
 }
 </script>
-
 </body>
 </html>
