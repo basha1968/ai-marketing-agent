@@ -1,0 +1,28 @@
+from flask import Flask
+import subprocess
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)  # Allows your dashboard to connect
+
+@app.route("/run-content-generator")
+def run_content_generator():
+    try:
+        subprocess.run(["python", "../content_generator.py"], check=True)  # Runs your script (note: ../ to go up one folder)
+        with open("../output/blog_post.txt", "r", encoding="utf-8") as f:
+            content = f.read()
+        return content
+    except Exception as e:
+        return f"Error: {str(e)}", 500
+
+@app.route("/run-social-media")
+def run_social_media():
+    try:
+        subprocess.run(["python", "../linkedin_post.py"], check=True)
+        subprocess.run(["python", "../publish_blogger.py"], check=True)
+        return "Social media scripts ran successfully!"
+    except Exception as e:
+        return f"Error: {str(e)}", 500
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
