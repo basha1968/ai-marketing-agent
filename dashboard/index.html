@@ -3,7 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>AI Marketing Dashboard</title>
-<link rel="stylesheet" href="style.css">
+<style>
+  body { font-family: Arial; padding: 20px; background: #f4f4f9; }
+  h1 { color: #333; }
+  .section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 10px; background: #fff; }
+  button { padding: 10px 20px; margin-top: 10px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
+  pre { background: #f0f0f0; padding: 10px; border-radius: 5px; max-height: 300px; overflow-y: auto; }
+</style>
 </head>
 <body>
 <h1>AI Marketing Dashboard</h1>
@@ -20,16 +26,7 @@
   <pre id="socialOutput"></pre>
 </div>
 
-<script src="script.js"></script>
-</body>
-</html>
-
-body { font-family: Arial; padding: 20px; background: #f4f4f9; }
-h1 { color: #333; }
-.section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 10px; background: #fff; }
-button { padding: 10px 20px; margin-top: 10px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
-pre { background: #f0f0f0; padding: 10px; border-radius: 5px; max-height: 300px; overflow-y: auto; }
-
+<script>
 function runContentGenerator() {
     document.getElementById('contentOutput').textContent = 'This will generate blog post (backend not connected yet).';
 }
@@ -37,3 +34,7 @@ function runContentGenerator() {
 function runSocialMedia() {
     document.getElementById('socialOutput').textContent = 'This will run social media scripts (backend not connected yet).';
 }
+</script>
+
+</body>
+</html>
